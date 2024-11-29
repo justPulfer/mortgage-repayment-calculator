@@ -50,13 +50,17 @@ img {
     --large-size: 2rem;
     --x-large-size: 2.5rem;
     --xx-large-size: 3rem;
+    --over-size: 5rem;
 }
 
 body {
+    display: grid;
+    place-items: center;
     font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 16px;
     min-width: 100dvw;
     min-height: 100dvh;
+    margin: auto;
 }
 
 .main-container {
@@ -117,6 +121,66 @@ body {
     border-radius: var(--x-tiny-size);
 }
 
+.mortgage-type-input-field:hover {
+    cursor: pointer;
+    border-color: var(--clr-lime);
+    outline: 0.75px solid var(--clr-lime);
+}
+
+.mortgage-type-input-field:focus-within {
+    background-color: hsl(60, 100%, 94%);
+    border-color: var(--clr-lime);
+    outline: 0.75px solid var(--clr-lime);
+}
+
+/* customradio input */
+input[type="radio"] {
+    accent-color: var(--clr-lime);
+    background-color: white;
+    border-color: var(--clr-lime);
+    outline: none;
+    border: 1px solid var(--clr-lime);
+    appearance: none;
+    -webkit-appearance: none;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+}
+
+input[type="radio"]:checked {
+    background-color: white;
+    border: 2px solid var(--clr-lime);
+    position: relative;
+}
+
+input[type="radio"]:checked::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: var(--clr-lime);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    display: block;
+}
+
+/* removing default input type number spinner */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+/* on focus input */
+input:focus {
+    outline: 0.75px solid var(--clr-lime);
+    border-color: var(--clr-lime);
+    cursor: pointer;
+}
+
 .mortgage-type-label {
     color: var(--clr-slate-900);
     font-weight: var(--fw-bold);
@@ -137,6 +201,11 @@ body {
     font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: var(--fw-bold);
     font-size: var(--fs-regular);
+}
+
+.calculate-btn:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
 
 /* section right */
@@ -220,6 +289,25 @@ body {
     gap: var(--tiny-size);
 }
 
-/* @media (min-width: 768px) {
+@media (min-width: 768px) {
+    body {
+        background-color: var(--clr-slate-100);
+    }
 
-} */
+    .main-container {
+        grid-template-columns: 1fr 1fr;
+        width: max(68%, 768px);
+        border-radius: var(--semi-large-size);
+        overflow: clip;
+        background-color: var(--clr-white);
+    }
+
+    .left-pane {
+        padding: var(--xx-large-size);
+    }
+
+    .right-pane {
+        padding: var(--xx-large-size);
+        border-radius: 0 0 0 var(--over-size);
+    }
+}
