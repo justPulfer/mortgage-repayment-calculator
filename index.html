@@ -49,28 +49,25 @@
 					</div>
 				</div>
 				<div class="mortgage-type mortgage-fields">
-					<p class="label">Mortgage Type</p>
-					<div class="repayment-input-field mortgage-type-input-field">
-						<input
-							type="radio"
-							name="mortgage-type"
-							id="repayment"
-							value="repayment"
-						/>
-						<label for="repayment" class="mortgage-type-label">Repayment</label>
-					</div>
-					<div class="interest-only-input-field mortgage-type-input-field">
-						<input
-							type="radio"
-							name="mortgage-type"
-							id="interest-only"
-							value="interest-only"
-						/>
-						<label for="interest-only" class="mortgage-type-label"
-							>Interest Only</label
-						>
-					</div>
-				</div>
+    <p class="label">Mortgage Type</p>
+    <div class="mortgage-type-input-field">
+        <label class="mortgage-type-label" for="repayment">
+            <input type="radio" name="mortgageType" value="repayment" id="repayment" />
+            Repayment
+        </label>
+    </div>
+    <div class="mortgage-type-input-field">
+        <label class="mortgage-type-label" for="interest-only">
+            <input
+                type="radio"
+                name="mortgageType"
+                id="interest-only"
+                value="interest-only"
+            />
+            Interest Only
+        </label>
+    </div>
+</div>
 				<button class="calculate-btn">
 					<img src="/assets/images/icon-calculator.svg"></img> Calculate Repayments</button>
 			</section>

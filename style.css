@@ -201,21 +201,25 @@ body {
     cursor: pointer;
 }
 
-.mortgage-type-input-field {
+.mortgage-type-label {
+    width: 100%;
     display: flex;
+    align-items: center;
     gap: var(--small-size);
     padding: var(--small-size) var(--regular-size);
     border: 0.75px solid var(--clr-slate-900);
     border-radius: var(--x-tiny-size);
+    color: var(--clr-slate-900);
+    font-weight: var(--fw-bold);
 }
 
-.mortgage-type-input-field:hover {
+.mortgage-type-label:hover {
     cursor: pointer;
     border-color: var(--clr-lime);
     outline: 0.75px solid var(--clr-lime);
 }
 
-.mortgage-type-input-field:focus-within {
+.mortgage-type-label:focus-within {
     background-color: hsl(60, 100%, 94%);
     border-color: var(--clr-lime);
     outline: 0.75px solid var(--clr-lime);
@@ -266,11 +270,6 @@ input[type="number"]::-webkit-outer-spin-button {
 input:focus {
     outline: 0.75px solid var(--clr-lime);
     border-color: var(--clr-lime);
-}
-
-.mortgage-type-label {
-    color: var(--clr-slate-900);
-    font-weight: var(--fw-bold);
 }
 
 .calculate-btn {
@@ -389,7 +388,7 @@ input:focus {
 
     .main-container {
         grid-template-columns: 1fr 1fr;
-        width: max(68%, 768px);
+        width: max(40%, 768px);
         border-radius: var(--semi-large-size);
         overflow: clip;
         background-color: var(--clr-white);
