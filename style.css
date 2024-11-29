@@ -132,7 +132,7 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    height: 42.8px;
+    height: 97%;
     padding: 0 var(--regular-size);
     background-color: var(--clr-slate-100);
     border: 0.5px solid var(--clr-slate-900);
@@ -166,7 +166,7 @@ body {
     position: absolute;
     right: 0;
     top: 42.725%;
-    height: 42.8px;
+    height: 56%;
     padding: 0 var(--small-size);
     background-color: var(--clr-slate-100);
     border: 0.5px solid var(--clr-slate-900);
