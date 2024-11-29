@@ -381,6 +381,12 @@ input:focus {
         background-color: var(--clr-slate-100);
     }
 
+    .title-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     .main-container {
         grid-template-columns: 1fr 1fr;
         width: max(68%, 768px);
