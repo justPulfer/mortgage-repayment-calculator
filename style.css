@@ -25,10 +25,201 @@ img {
     --clr-slate-300: hsl(203, 41%, 72%);
     --clr-slate-500: hsl(200, 26%, 54%);
     --clr-slate-700: hsl(200, 24%, 40%);
+    --clr-slate-800: hsl(201, 57%, 19%);
     --clr-slate-900: hsl(202, 55%, 16%);
+
+    /* font size */
+    --fs-xx-large: 2.4rem;
+    --fs-x-large: 1.4rem;
+    --fs-large: 1.3rem;
+    --fs-regular: 1rem;
+    --fs-small: 0.975rem;
+    --fs-tiny: 0.5rem;
+
+    /* Font weight */
+    --fw-regular: 400;
+    --fw-semi-bold: 500;
+    --fw-bold: 700;
+
+    /* general sizes */
+    --x-tiny-size: 0.35rem;
+    --tiny-size: 0.5rem;
+    --small-size: 0.725rem;
+    --regular-size: 1rem;
+    --semi-large-size: 1.5rem;
+    --large-size: 2rem;
+    --x-large-size: 2.5rem;
+    --xx-large-size: 3rem;
 }
 
 body {
     font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 16px;
+    min-width: 100dvw;
+    min-height: 100dvh;
 }
+
+.main-container {
+    display: grid;
+}
+
+.left-pane {
+    display: grid;
+    gap: var(--semi-large-size);
+    padding: var(--large-size) var(--semi-large-size);
+}
+
+.title-container {
+    display: grid;
+    gap: var(--small-size);
+    justify-content: flex-start;
+    color: var(--clr-slate-900);
+}
+
+.main-title,
+.sub-title {
+    font-size: var(--fs-large);
+    font-weight: var(--fw-bold);
+}
+
+.clear-btn {
+    width: fit-content;
+    border: none;
+    background-color: transparent;
+    color: var(--clr-slate-700);
+    text-decoration: underline;
+    font-size: var(--fs-small);
+}
+
+.mortgage-fields {
+    display: grid;
+    gap: var(--small-size);
+}
+
+.label {
+    font-size: var(--fs-small);
+    color: var(--clr-slate-700);
+}
+
+.input {
+    width: 100%;
+    display: flex;
+    padding: var(--small-size);
+    border-radius: var(--x-tiny-size);
+    border: 0.75px solid var(--clr-slate-900);
+}
+
+.mortgage-type-input-field {
+    display: flex;
+    gap: var(--small-size);
+    padding: var(--small-size) var(--regular-size);
+    border: 0.75px solid var(--clr-slate-900);
+    border-radius: var(--x-tiny-size);
+}
+
+.mortgage-type-label {
+    color: var(--clr-slate-900);
+    font-weight: var(--fw-bold);
+}
+
+.calculate-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--small-size);
+    width: 100%;
+    padding: var(--small-size);
+    border-radius: var(--large-size);
+    border: none;
+    background-color: var(--clr-lime);
+    color: var(--clr-slate-900);
+
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-regular);
+}
+
+/* section right */
+.right-pane {
+    display: grid;
+    gap: var(--large-size);
+    background-color: var(--clr-slate-800);
+    padding: var(--large-size) var(--semi-large-size);
+    color: var(--clr-white);
+}
+
+/* results container */
+.results-container {
+    display: grid;
+    place-items: center;
+}
+
+.empty-results-container {
+    display: grid;
+    text-align: center;
+}
+
+.results-text-container {
+    display: grid;
+    gap: var(--small-size);
+}
+
+
+.results-text-title {
+    font-size: var(--fs-large);
+    font-weight: var(--fw-bold);
+}
+
+.results-text {
+    font-size: var(--fs-small);
+    color: var(--clr-slate-500);
+}
+
+.empty-results-text {
+    text-align: center;
+}
+
+/* completed results */
+.completed-results {
+    display: none;
+    gap: var(--regular-size);
+}
+
+.completed-results-display-fields {
+    display: grid;
+    gap: var(--large-size);
+    background-color: var(--clr-lime);
+    border-radius: 0.6rem;
+}
+
+.completed-results-display-field {
+    display: grid;
+    border-radius: var(--x-tiny-size);
+    padding: var(--semi-large-size) var(--regular-size);
+    gap: var(--small-size);
+    background-color: var(--clr-slate-900);
+    height: 98%;
+    align-self: flex-end;
+}
+
+.monthly-repayments-display-value {
+    font-size: var(--fs-xx-large);
+    font-weight: var(--fw-bold);
+    color: var(--clr-lime);
+}
+
+.total-repay-display-value {
+    font-size: var(--fs-x-large);
+    font-weight: var(--fw-semi-bold);
+    color: var(--clr-white);
+}
+
+.total-repay-amount-container,
+.monthly-repayments-container {
+    display: grid;
+    gap: var(--tiny-size);
+}
+
+/* @media (min-width: 768px) {
+
+} */

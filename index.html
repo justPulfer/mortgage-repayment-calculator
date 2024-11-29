@@ -18,25 +18,103 @@
 			rel="stylesheet"
 		/>
 
+		<link rel="stylesheet" href="style.css" />
+
 		<title>Mortgage repayment calculator</title>
 	</head>
 	<body>
-		Mortgage Calculator Clear All Mortgage Amount Mortgage Term Interest Rate
-		Mortgage Type Repayment Interest Only Calculate Repayments
+		<main class="main-container">
+			<section class="left-pane">
+				<div class="title-container">
+					<p class="main-title">Mortgage Calculator</p>
+					<button class="clear-btn">Clear All</button>
+				</div>
+				<div class="mortgage-input mortgage-fields">
+					<label for="mortgage-amount" class="label">Mortgage Amount</label>
+					<div class="input-container">
+						<span class="currency-symbol">
+							<input type="number" id="mortgage-amount" class="input" />
+						</span>
+					</div>
+				</div>
+				<div class="mortgage-term-interest mortgage-fields">
+					<label for="mortgage-term" class="label">Mortgage Term</label>
+					<input type="number" id="mortgage-term" class="input" />
+					<label for="interest-rate" class="label">Interest Rate</label>
+					<input type="number" id="interest-rate" class="input" />
+				</div>
+				<div class="mortgage-type mortgage-fields">
+					<p class="label">Mortgage Type</p>
+					<div class="repayment-input-field mortgage-type-input-field">
+						<input
+							type="radio"
+							name="mortgage-type"
+							id="repayment"
+							value="repayment"
+						/>
+						<label for="repayment" class="mortgage-type-label">Repayment</label>
+					</div>
+					<div class="interest-only-input-field mortgage-type-input-field">
+						<input
+							type="radio"
+							name="mortgage-type"
+							id="interest-only"
+							value="interest-only"
+						/>
+						<label for="interest-only" class="mortgage-type-label"
+							>Interest Only</label
+						>
+					</div>
+				</div>
+				<button class="calculate-btn">
+					<img src="/assets/images/icon-calculator.svg"></img> Calculate Repayments</button>
+			</section>
 
-		<!-- Empty results start -->
+			<section class="right-pane">
+				<div class="results-container">
+					<div class="empty-results-container results-container">
+						<img
+							src="./assets/images/illustration-empty.svg"
+							alt="illustration of a calculator"
+						/>
+						<div class="empty-results-text-container results-text-container">
+							<p class="results-text-title">Results shown here</p>
+							<p class="empty-results-text results-text">Complete the form and click “calculate
+							repayments” to see what your monthly repayments would be.</p>
+						</div>
+					</div>
 
-		Results shown here Complete the form and click “calculate repayments” to see
-		what your monthly repayments would be.
-
-		<!-- Empty results end -->
-
-		<!-- Completed results start -->
-
-		Your results Your results are shown below based on the information you
-		provided. To adjust the results, edit the form and click “calculate
-		repayments” again. Your monthly repayments Total you'll repay over the term
-
-		<!-- Completed results end -->
+					<div class="completed-results">
+						<div class="completed-results-text-container results-text-container">
+							<h2 class="completed-results-text-title results-text-title">Your results</h2>
+							<p class="completed-results-text results-text">
+								Your results are shown below based on the information you
+								provided. To adjust the results, edit the form and click
+								“calculate repayments” again.
+							</p>
+						</div>
+						<div class="completed-results-display-fields">
+							<div class="completed-results-display-field">
+								<div class="monthly-repayments-container">
+									<p class="completed-results-display-title results-text">
+										Your monthly repayments
+									</p>
+									<p class="monthly-repayments-display-value">£1,797.74</p>
+								</div>
+								<span class="divider"></span>
+								<div class="total-repay-amount-container">
+									<p class="completed-results-display-title results-text">
+										Total you'll repay over the term
+									</p>
+									<p class="total-repay-display-value">£539,322.94</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					</div>
+					
+				</div>
+			</section>
+		</main>
 	</body>
 </html>
