@@ -29,22 +29,28 @@
 					<p class="main-title">Mortgage Calculator</p>
 					<button class="clear-btn">Clear All</button>
 				</div>
-				<div class="mortgage-input mortgage-fields">
-					<label for="mortgage-amount" class="label">Mortgage Amount</label>
-					<div class="currency-symbol input-tag">
-							<input type="number" id="mortgage-amount" class="input" />
+				<div class="mortgage-amount-input-field mortgage-fields">
+					<label for="mortgage-amount" class="label" id="mortgage-amount-label">Mortgage Amount</label>
+					<div class="currency-symbol input-tag" id="mortgage-amount-input-tag">
+							<input type="number" id="mortgage-amount" class="input" name="mortgage amount"/>
 					</div>
+					<span class="mortgage-amount-error error-message"></span>
 				</div>
-				<div class="mortgage-term-interest mortgage-fields">
+				<div class="mortgage-term-interest">
 					<div class="mortgage-term-interest-rate-container">
-						<div class="mortgage-term-input-field">	
-								<label for="mortgage-term" class="label">Mortgage Term</label>
-							<input type="number" id="mortgage-term" class="input" />
-						
+						<div class="mortgage-term-input-field mortgage-fields">	
+								<label for="mortgage-term" class="label" id="mortgage-term-label">Mortgage Term</label>
+								<div class="input-tag" id="mortgage-term-input-tag">
+									<input type="number" id="mortgage-term" class="input" name="mortgage term"/>
+								</div>
+							<span class="mortgage-term-error error-message"></span>
 						</div>
-						<div class="interest-rate-input-field">
-							<label for="interest-rate" class="label">Interest Rate</label>
-							<input type="number" id="interest-rate" class="input" />
+						<div class="interest-rate-input-field mortgage-fields">
+							<label for="interest-rate" class="label" id="interest-rate-label">Interest Rate</label>
+							<div class="input-tag" id="interest-rate-input-tag">
+								<input type="number" id="interest-rate" class="input" name="interest rate"/>
+							</div>
+							<span class="interest-rate-error error-message"></span>
 						</div>
 					</div>
 				</div>
@@ -52,7 +58,7 @@
     <p class="label">Mortgage Type</p>
     <div class="mortgage-type-input-field">
         <label class="mortgage-type-label" for="repayment">
-            <input type="radio" name="mortgageType" value="repayment" id="repayment" />
+            <input type="radio" name="mortgage type" value="repayment" id="repayment" />
             Repayment
         </label>
     </div>
@@ -60,13 +66,14 @@
         <label class="mortgage-type-label" for="interest-only">
             <input
                 type="radio"
-                name="mortgageType"
+                name="mortgage type"
                 id="interest-only"
                 value="interest-only"
             />
             Interest Only
         </label>
     </div>
+	<span class="mortgage-type-error error-message"></span>
 </div>
 				<button class="calculate-btn">
 					<img src="/assets/images/icon-calculator.svg"></img> Calculate Repayments</button>

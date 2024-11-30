@@ -109,6 +109,7 @@ body {
     width: 100%;
     display: grid;
     gap: var(--semi-large-size);
+    align-items: flex-start;
 }
 
 .mortgage-term-input-field,
@@ -123,30 +124,50 @@ body {
     color: var(--clr-slate-700);
 }
 
-.currency-symbol {
+.input-tag {
     position: relative;
 }
 
+.mortgage-term-input-field .input-tag::after {
+    content: 'years';
+}
+
+.interest-rate-input-field .input-tag::after {
+    content: '%';
+}
+
+.input-tag::after,
 .currency-symbol::after {
-    content: '£';
     position: absolute;
-    left: 0;
     top: 0;
     height: 97.5%;
-    padding: 0 var(--regular-size);
-    background-color: var(--clr-slate-100);
-    border: 0.5px solid var(--clr-slate-900);
-    border-right: none;
-    border-radius: var(--x-tiny-size) 0 0 var(--x-tiny-size);
     display: flex;
     align-items: center;
     font-weight: var(--fw-bold);
     color: var(--clr-slate-700);
+    background-color: var(--clr-slate-100);
+    border: 0.5px solid var(--clr-slate-900);
+}
+
+.currency-symbol::after {
+    content: '£';
+    left: 0;
+    padding: 0 var(--regular-size);
+    border-right: none;
+    border-radius: var(--x-tiny-size) 0 0 var(--x-tiny-size);
+}
+
+.mortgage-term-input-field .input-tag::after,
+.interest-rate-input-field .input-tag::after {
+    right: 0;
+    padding: 0 var(--small-size);
+    border-left: none;
+    border-radius: 0 var(--x-tiny-size) var(--x-tiny-size) 0;
 }
 
 .currency-symbol:focus-within::after,
-.mortgage-term-input-field:focus-within::after,
-.interest-rate-input-field:focus-within::after {
+.mortgage-term-input-field .input-tag:focus-within::after,
+.interest-rate-input-field .input-tag:focus-within::after {
     background-color: var(--clr-lime);
     border-color: var(--clr-lime);
     color: var(--clr-slate-800);
@@ -156,36 +177,6 @@ body {
     padding-left: calc(var(--regular-size) * 3.5);
 }
 
-.mortgage-term-input-field,
-.interest-rate-input-field {
-    position: relative;
-}
-
-.mortgage-term-input-field::after,
-.interest-rate-input-field::after {
-    position: absolute;
-    right: 0;
-    top: 42.725%;
-    height: 56%;
-    padding: 0 var(--small-size);
-    background-color: var(--clr-slate-100);
-    border: 0.5px solid var(--clr-slate-900);
-    border-left: none;
-    border-radius: 0 var(--x-tiny-size) var(--x-tiny-size) 0;
-    display: flex;
-    align-items: center;
-    font-weight: var(--fw-bold);
-    color: var(--clr-slate-700);
-}
-
-.mortgage-term-input-field::after {
-    content: 'years';
-}
-
-.interest-rate-input-field::after {
-    content: '%';
-}
-
 .input {
     width: 100%;
     display: flex;
@@ -193,6 +184,7 @@ body {
     border-radius: var(--x-tiny-size);
     border: 0.75px solid var(--clr-slate-900);
     color: var(--clr-slate-900);
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: var(--fw-bold);
     font-size: var(--fs-regular);
 }
@@ -373,6 +365,22 @@ input:focus {
 .monthly-repayments-container {
     display: grid;
     gap: var(--tiny-size);
+}
+
+
+/* error messages */
+.error-message {
+    font-size: 0.75rem;
+    color: var(--clr-red);
+}
+
+.input-border-error {
+    border: 1px solid var(--clr-red);
+}
+
+.input-tag-error::after {
+    background-color: var(--clr-red);
+    color: var(--clr-white);
 }
 
 @media (min-width: 768px) {
