@@ -47,7 +47,7 @@ const principalAmount = Number(mortgageAmountInput.value);
 
 // FUNCTIONS
 
-// _________Interests Only ________//
+// _________Interests Only ________ //
 
 // monthly interest only function
 const calcMonthlyInterestOnly = (principal, rate) =>
@@ -57,9 +57,9 @@ const calcMonthlyInterestOnly = (principal, rate) =>
 const calcInterestOverTerm = (monthlyPayment, term, principal) =>
 	(monthlyPayment * term - principal).toFixed(2);
 
-//__________________________//
+//__________________________ //
 
-// ________Repayment ________//
+// ________Repayment ________ //
 
 // Monthly payment with interest function
 const calcMonthlyPayment = (principal, term, rate) =>
@@ -68,7 +68,7 @@ const calcMonthlyPayment = (principal, term, rate) =>
 		((1 + rate) ** term - 1)
 	).toFixed(2);
 
-//monthly payment value
+// monthly payment value
 const monthlyPayment = calcMonthlyPayment(
 	principalAmount,
 	mortgageTermInMonths,
@@ -78,7 +78,7 @@ const monthlyPayment = calcMonthlyPayment(
 // total payment over term function
 const calcPaymentOverTerm = (term) => (monthlyPayment * term).toFixed(2);
 
-//__________________________//
+//__________________________ //
 
 console.log(
 	"Monthly Interest Only:",
@@ -97,15 +97,15 @@ console.log("Payment Over Term:", calcPaymentOverTerm(mortgageTermInMonths));
 // displayError
 const displayError = (span, input, inputTag, errorMessage) => {
 	span.textContent = errorMessage;
-	input.classList.add("input-border-error");
+	input.parentElement.classList.add("input-border-error");
 	inputTag.classList.add("input-tag-error");
 };
 
 // clear errors
-const clearErrors = (span) => {
+const clearErrors = (span, input, inputTag) => {
 	span.textContent = "";
-	mortgageAmountInput.classList.remove("input-border-error");
-	mortgageAmountInputTag.classList.remove("input-tag-error");
+	input.parentElement.classList.remove("input-border-error");
+	inputTag.classList.remove("input-tag-error");
 };
 
 // VALIDATIONS
@@ -116,7 +116,7 @@ const validator = (span, input, inputTag, errorMessage) => {
 	} else if (input.value < 0) {
 		displayError(span, input, inputTag, `Invalid ${input.name}`);
 	} else {
-		clearErrors(span);
+		clearErrors(span, input, inputTag);
 	}
 };
 
@@ -147,4 +147,9 @@ interestRateInput.addEventListener("input", () => {
 		interestRateInputTag,
 		"This field is required"
 	);
+});
+
+// calculate button
+calculateBtn.addEventListener("click", () => {
+	console.log("calculate");
 });

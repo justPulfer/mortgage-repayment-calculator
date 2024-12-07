@@ -31,8 +31,9 @@
 				</div>
 				<div class="mortgage-amount-input-field mortgage-fields">
 					<label for="mortgage-amount" class="label" id="mortgage-amount-label">Mortgage Amount</label>
-					<div class="currency-symbol input-tag" id="mortgage-amount-input-tag">
-							<input type="number" id="mortgage-amount" class="input" name="mortgage amount"/>
+					<div class="input-container">
+						<input type="number" id="mortgage-amount" class="input" name="mortgage amount"/>
+						<span class="currency-symbol input-tag" id="mortgage-amount-input-tag">£</span>
 					</div>
 					<span class="mortgage-amount-error error-message"></span>
 				</div>
@@ -40,16 +41,20 @@
 					<div class="mortgage-term-interest-rate-container">
 						<div class="mortgage-term-input-field mortgage-fields">	
 								<label for="mortgage-term" class="label" id="mortgage-term-label">Mortgage Term</label>
-								<div class="input-tag" id="mortgage-term-input-tag">
+								<div class="input-container">
 									<input type="number" id="mortgage-term" class="input" name="mortgage term"/>
+									<span class="input-tag" id="mortgage-term-input-tag">years</span>
 								</div>
-							<span class="mortgage-term-error error-message"></span>
+								<span class="mortgage-term-error error-message"></span>
 						</div>
 						<div class="interest-rate-input-field mortgage-fields">
 							<label for="interest-rate" class="label" id="interest-rate-label">Interest Rate</label>
-							<div class="input-tag" id="interest-rate-input-tag">
+							
+							<div class="input-container">
 								<input type="number" id="interest-rate" class="input" name="interest rate"/>
+								<span class="input-tag" id="interest-rate-input-tag">%</span>
 							</div>
+							
 							<span class="interest-rate-error error-message"></span>
 						</div>
 					</div>
